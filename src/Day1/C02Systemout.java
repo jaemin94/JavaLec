@@ -30,14 +30,18 @@ public class C02Systemout {
 		//%c : 한문자 서식문자
 		//%s : 문자명 서식문자
 		
-		System.out.printf("%d %d %d\n", 10,20,30);
-		System.out.printf("%f %f %f\n",10.1,20.1,30.1);
-		System.out.printf("%c %c %c\n", 'A', 'B', 'C');
-		System.out.printf("%s %s %s\n","This is","String","Test");
-		System.out.printf("%d,%s : %d\n",1,"국어",100);
+//		System.out.printf("%d %d %d\n", 10,20,30);
+//		System.out.printf("%f %f %f\n",10.1,20.1,30.1);
+//		System.out.printf("%c %c %c\n", 'A', 'B', 'C');
+//		System.out.printf("%s %s %s\n","This is","String","Test");
+//		System.out.printf("%d,%s : %d\n",1,"국어",100);
 
 	//System.out.println()
+		System.out.println("Hello World");
+		System.out.println("Hello World");
+		System.out.println("Hello World");
 		
+		System.out.println("I Say \"HELLO\"");
 	}
 
 }
