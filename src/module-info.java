@@ -6,4 +6,5 @@
  *
  */
 module JavaLec {
+	requires java.desktop;
 }
