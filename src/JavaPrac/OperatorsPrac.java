@@ -1,14 +1,29 @@
 package JavaPrac;
 
+import java.util.Scanner;
+
 public class OperatorsPrac {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int score = 85;
-		String result = (!(score>90))? "가" : "나";
-		System.out.println(result);
-			
+		Scanner scan= new Scanner(System.in);
+		
+		System.out.println("국어 점수 : ");
+		int kor = scan.nextInt();
+		
+		System.out.println("영어 점수 : ");
+		int eng = scan.nextInt();;
+		
+		System.out.println("수학 점수 : ");
+		int math = scan.nextInt();;
+		
+		int total = kor + eng + math;
+		double avg = total/3;
+		System.out.println("평균 점수 : " + avg);
+		String result = kor >= 40 && eng >= 40 && math >=40 && avg >= 60 ? "합격" : "불합격";
+		
+		System.out.println("결과 : " + result);
 	}
 
 }
