@@ -12,6 +12,10 @@ public class C04For {
 //			i++;//증감연산식
 //		}
 		
+//		for(//초기값;//조건식;//연산식)
+		
+		
+		
 		
 //		for(int i=0;i<10;i++) {
 //			System.out.println("HELLO WORLD");
@@ -101,37 +105,37 @@ public class C04For {
 		
 		
 		
-		int i=0;
-		int j=0;
-		int k=0;
-		
-		for(i=0;i<7;i++) {
-			if(i<4)
-			{
-				//공백
-				for(j=0;j<=2-i;j++) {
-					System.out.print(" ");
-				}
-				//별
-				for(k=0;k<=2*i;k++) {
-					System.out.print("*");
-				}
-				
-			}else 
-			{
-				//공백
-				for(j=0;j<=i-4;j++)
-				{
-					System.out.print(" ");
-				}
-				//별
-				for(k=0;k<=12-2*i;k++)
-				{
-					System.out.print("*");
-				}
-			}
-			System.out.println();
-		}
+//		int i=0;
+//		int j=0;
+//		int k=0;
+//		
+//		for(i=0;i<7;i++) {
+//			if(i<4)
+//			{
+//				//공백
+//				for(j=0;j<=2-i;j++) {
+//					System.out.print(" ");
+//				}
+//				//별
+//				for(k=0;k<=2*i;k++) {
+//					System.out.print("*");
+//				}
+//				
+//			}else 
+//			{
+//				//공백
+//				for(j=0;j<=i-4;j++)
+//				{
+//					System.out.print(" ");
+//				}
+//				//별
+//				for(k=0;k<=12-2*i;k++)
+//				{
+//					System.out.print("*");
+//				}
+//			}
+//			System.out.println();
+//		}
 		
 	}
 

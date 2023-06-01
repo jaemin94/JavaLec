@@ -230,16 +230,59 @@ public class C00WhileWhile {
 			// *****	0-4
 			//  ***		0-2	
 			//   *		 0
-				
 			
+//		int i = 0;
+//		int j = 0;
+//		int k = 0;
+//		
+//		while(i<=6)
+//		{
+//			
+//			if(i<=3)
+//			{
+//				j=0;
+//				k=0;
+//				while(j<=2-i)
+//				{
+//					System.out.print(" ");
+//					j++;
+//				}
+//				while(k<=2*i)
+//				{
+//					System.out.print("*");
+//					k++;
+//				}
+//			}
+//			else
+//			{
+//				j=0;
+//				k=0;
+//				while(j<i-3)
+//				{
+//					System.out.print(" ");
+//					j++;
+//				}
+//				while(k<=(6-i)*2)
+//				{
+//					System.out.print("*");
+//					k++;
+//				}
+//			}
+//			System.out.println();
+//			i++;
+//		}
+			
+		Scanner scan = new Scanner(System.in);
+		int h = scan.nextInt();
+		
 		int i = 0;
 		int j = 0;
 		int k = 0;
 		
-		while(i<=6)
+		while(i<=h)
 		{
 			
-			if(i<=3)
+			if(i<(h/2+1))
 			{
 				j=0;
 				k=0;
@@ -258,24 +301,20 @@ public class C00WhileWhile {
 			{
 				j=0;
 				k=0;
-				while(j<i-3)
+				while(j<i-(h/2))
 				{
 					System.out.print(" ");
 					j++;
 				}
-				while(k<(7-i)*2-1)
+				while(k<=(h-1)*2-2*i)
 				{
 					System.out.print("*");
 					k++;
 				}
 			}
-			
-			
 			System.out.println();
 			i++;
 		}
-			
-	
 		
 	
 		

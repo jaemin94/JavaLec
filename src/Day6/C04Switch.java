@@ -5,22 +5,22 @@ public class C04Switch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int ranking = 1;
+		int ranking = 2;
 		char medalColor;
-		switch(ranking)
-		{
+		switch(ranking) // if문과 elseif 문과 비슷하다. switch문은 다중분기문이라 불린다.
+		{				// case 에는 상수만 들어간다
 		case 1:
 			medalColor = 'G';
 			System.out.println("메달색상 : G");
-			//break;
+			break;
 		case 2:
 			medalColor = 'S';
 			System.out.println("메달색상 : S");
-			//break;
+			break;
 		case 3:
 			medalColor = 'B';
 			System.out.println("메달색상 : B");
-			//break;
+			break;
 		default:
 			medalColor = 'C';
 			System.out.println("메달색상 : C");
