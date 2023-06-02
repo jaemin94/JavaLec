@@ -20,11 +20,7 @@ public class C00Computer {
 	void ShowInfo()
 	{
 		System.out.println("시리얼넘버:"+SerialNo +"\t컴퓨터스펙:"+ CPUSpec+"\t램스펙:"+ RAMSpec + "\t디스크스펙:0" + DISKSpec);
-	}
-	//PowerON() : void 		SerialNo+의 전원을 켭니다 가 출력
-	//PowerOFF() : void		SerialNo+의 전원을 끕니다 가 출력
-	//ShowInfo() : void 	Computer객체의 모든 속성이 출력
-	
+	}	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
