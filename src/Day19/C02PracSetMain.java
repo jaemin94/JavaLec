@@ -32,3 +32,36 @@ public class C02PracSetMain {
 	}
 
 }
+
+/*
+  	Set<Integer> set = new HashSet();
+	Random rnd = new Random();
+	while(true)
+	{
+		if(set.size()==6)
+			{
+				break;
+			}
+		System.out.println(rnd.nextInt(45)+1);
+		set.add(rnd.nextInt(45)+1);
+		
+	}
+
+	// set -> list
+	List<Integer> list = new ArrayList(set);
+	Collections.sort(list); // 오름차순
+	Collections.sort(list,Collections.reverseOrder()); // 내림차순
+	for(Integer el : list
+		System.out.println(el + " ");
+
+
+	// Stream 함수
+	List<Integer> list = set.stream().sorted().collect(collectors.toList());
+	
+	for(Integer el : list)
+		System.out.println(el);
+
+
+
+
+*/

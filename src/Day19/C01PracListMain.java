@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class C01PracListMain {
-
+	
+		
+	
 	public static void func1(List<String> list)
 	{
 		list.add("AAAAAAAA");
@@ -32,17 +34,16 @@ public class C01PracListMain {
 		
 	}
 	
-	public static List<String> func2()
+	public static List<String> func2(List<String> list)
 	{
 		ArrayList<String> strings = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-
+		Scanner scan = new Scanner(System.in);
         // 사용자로부터 문자열 입력 받기
         System.out.println("문자열을 입력하세요 (종료: 빈 문자열):");
-        String input = scanner.nextLine();
+        String input = scan.nextLine();
         while (!input.isEmpty()) {
             strings.add(input);
-            input = scanner.nextLine();
+            input = scan.nextLine();
         }
 
         // 길이가 5보다 큰 문자열 출력
@@ -59,17 +60,17 @@ public class C01PracListMain {
 	
 	public static void func3()
 	{
-		ArrayList<Integer> numbers = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
+		List<Integer> numbers = new ArrayList<>();
 
+		Scanner scan = new Scanner(System.in);
         System.out.println("정수를 입력하세요 (종료: 0):");
-        int input = scanner.nextInt();
+        int input = scan.nextInt();
 
         while (input != 0) {
             if (input % 2 == 0) {
                 numbers.add(input);
             }
-            input = scanner.nextInt();
+            input = scan.nextInt();
         }
 
         System.out.println("입력된 짝수 값:");
@@ -81,11 +82,71 @@ public class C01PracListMain {
 	}
 	
 	public static void main(String[] args) {
-		
-		func1(new ArrayList());
-		List<String> list = func2();
-//		func3();		
+		List<String> li = new ArrayList();
+		func1(li);
+		func2(li);
+		func3();		
 		
 	}
 
 }
+
+/*
+	1:	for(String el : list)
+		{
+			if(el.length()>5
+			{
+				System.out.println(el);
+			}
+		}
+		
+	2:	Scanner scan = new Scanner(System.in);
+		String el = null;
+		System.out.println("입력하세요: ");
+		while(true)
+		{
+			el = scan.next();
+			if(el.length()>5)
+				break;
+			System.out.println("다시 입력: ");
+		}
+		
+		list.add(el);
+		
+		
+	3:	List<Integer> list = new ArrayList();
+		Scanner scan = new Scanner(System.in);
+		System.out.println("숫자를 입력하세요: ");
+		
+		int n = 0;
+		
+		 while(true)
+		 {
+		 	n = sc.nextInt();
+		 	if(n%2 ==0)
+		 	break;
+		 }
+		 list.add(n);
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

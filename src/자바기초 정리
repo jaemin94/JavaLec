@@ -402,22 +402,41 @@
  	
   15. 컬렉션(자료구조)
   	- List	: 차례대로 모여있는 데이터이면서 중복을 허용한다.
-  		- ArrayList		: Vector를 개선한것이며 내부안에 배열을 사용한다
-  			삭제시		  중간의 요소를 삭제시 뒤인덱스부터 마지막 인덱스 까지 모두 앞으로 1씩 당겨진다.
+  			- ArrayList		: Vector를 개선한것이며 내부안에 배열을 사용한다
+  				삭제시		: 중간의 요소를 삭제시 뒤인덱스부터 마지막 인덱스 까지 모두 앞으로 1씩 당겨진다.
   						  
-  		- LinkedList	: 연속되지 않은 공간에 데이터를 할당하여 앞뒤로 링크 시켜놓는다
+  			- LinkedList	: 연속되지 않은 공간에 데이터를 할당하여 앞뒤로 링크 시켜놓는다
   						  내부 배열 형태가 아닌 인접 참조를 링크해서 체인처럼 관리된다. 
-  			삭제시		  그러므로 중간 요서를 삭제해도 ArrayList 랑 다르게 일일이 인덱스를 설정해줄 필요가 없다
+  				삭제시		: 그러므로 중간 요서를 삭제해도 ArrayList 랑 다르게 일일이 인덱스를 설정해줄 필요가 없다
   						  
-  		- Stack			: 후입선출임으로 나중에 들어간 값이 먼저 나온다
-  			삭제시		  뒤에 들어간 요소에서 지속적으로 추가 삭제가 일어난다. 그러므로 ArrayList로 구현하는것이 적합하다
+  			- Stack			: 후입선출임으로 나중에 들어간 값이 먼저 나온다
+  				삭제시		: 뒤에 들어간 요소에서 지속적으로 추가 삭제가 일어난다. 그러므로 ArrayList로 구현하는것이 적합하다
   						  
-  		- Queue			: 선입선출임으로 먼저 들어간것이 먼저 나온다
-  			삭제시		  먼저 들어간것이 먼저 삭제된다. ArrayList로 만들면 뒤에 있는 요소들이 전부 이동해야 한다.
+  			- Queue			: 선입선출임으로 먼저 들어간것이 먼저 나온다
+  				삭제시		: 먼저 들어간것이 먼저 삭제된다. ArrayList로 만들면 뒤에 있는 요소들이 전부 이동해야 한다.
   						  그러므로 LinkedList로 구현하는것이 적합하다. 
   						  
-  		- Vector		: ArrayList와 다른점은 멀티 스레드환경에서 안전하게 객체를 추가/삭제할 수 있다.
+  			- Vector		: ArrayList와 다른점은 멀티 스레드환경에서 안전하게 객체를 추가/삭제할 수 있다.
  
+ 		- 공통 메서드
+ 			- 객체추가
+ 				- boolean add(E e)				: 주어진 객체를 맨 끝에 추가
+ 				- void add(int idx,E element)	: 주어진 인덱스에 객체를 추가
+ 				- E set(int idx, E element)		: 주어진 인덱스에 저장된 객체를 주어진 객체로 변경
+ 		
+ 			- 객체검색
+ 				- boolean contains(Object o)	: 저장되어 있는 전체 객체 수를 리턴
+ 				- E get(int idx)				: 주어진 인덱스에 저장된 객체를 리턴
+ 				- boolean isEmpty()				: 컬렉션이 비어 있는지 확인
+ 				- int size()					: 저장되어 있는 전체 객체 수를 리턴
+ 		
+ 			- 객체 삭제
+ 				- void clear()					: 저장된 모든 객체를 삭제
+ 				- E remove(int idx)				: 주어진 인덱스에 저장된 객체를 삭제
+ 				- boolean remove(Object o)		: 주어진 객체를 삭제
+ 		
+ 
+ 		
   	- Set	: 순서가 없는 데이터이면서 중복을 허용 하지 않는다
   		- HashSet		: 순서 없이 저장하며 동일 객체는 중복 저장하지 않는다
   						  hashCode 메서드를 호출해서 얻어낸 해시코드를 통해 객체의 동등비교후 중복되지 않는 데이터를 Set한다
@@ -427,12 +446,27 @@
   		
   		- TreeSet		: 중복을 허용하지 않으면서 요소는 자동으로 정렬된 순서로 유지된다
   						  SortedSet 인터페이스를 구현하여 정렬 관련 메서드를 활용 할수 있다.
-  		
+  	
+  	- 공통 메서드
+ 		- 객체추가
+ 			- boolean add(E e)				: 주어진 객체를 저장하고 객체가 성공적으로 저장되면 true 리턴 , 중복이면 false 리턴
+ 			
+ 		- 객체검색
+ 			- boolean contains(Object o)	: 주어진 객체가 저장되어 있는지 조사
+ 			- boolean isEmpty()				: 컬랙션이 비어 있는지 확인
+ 			- Iterator<E> iterlator()		: 저장된 객체를 한번씩 가져오는 반복자를 리턴
+ 			- int size()					: 저장되어 있는 전체 객체수를 리턴
+ 			
+ 		- 객체삭제
+ 			- void clear()					: 저장된 모든 객체를 삭제
+ 			- boolean remove(Object o)		: 주어진 객체를 삭제
+ 					
+ 			
   	- Map	: 키와 값의 쌍으로 이루어진 데이터이면서 키는 중복을 허용 하지 않는다
   		- HashMap		: Map 인터페이스를 구현한 대표적인 Map 컬렉션이다
   						  HashMap의 키로 사용할 객체는 hashCode와 equals 메소드를 재정의해서 동등객체가 될 조건을 정해야한다.
   		
-  		- Hashtable		: HashMap과 동일한 내부구도를 가지고 있으나 HashTable은 동기화된 메소드 구성으로 인해 스레드 환경으로부터 안전하다
+  		- HashTable		: HashMap과 동일한 내부구도를 가지고 있으나 HashTable은 동기화된 메소드 구성으로 인해 스레드 환경으로부터 안전하다
   		
   		- TreeMap		: 증복을 허용하지 않으면서 요서는 자동으로 정렬된 순서로 유지된다
   						  이진검색 트리를 사용하여 효율적인 검색, 삽입, 삭제를 할수잇다
@@ -440,6 +474,152 @@
   		
   		- Properties	: 중복을 허용하지 않으면서 properties 확장자를 가진 설정 파일과의 호환성을 제공하여 설정 정보를 저장하고 관리할수 잇다.
   						  파일 입출력이 지원되어 설정 파일을 로드하고 저장하기위해 load 와 store 메서드가 사용된다.
+  	
+  	- 공통 메서드
+ 		- 객체추가
+ 			- V put(K key,V value)					: 주어진키로 값을 저장하며 새로운 키일경우 null 리턴하고 동일한 키가 있을 경우 값을 대체하고 이전 값을 리턴
+ 		
+ 		- 객체검색
+ 			- boolean containsKey(Object key)		: 주어진 키가 있는지 여부를 확인
+ 			- boolean containsValue(Object value)	: 주어진 값이 있는지 여부를 확인
+ 			- Set<Map.entry<K,V>> entrySet()		: 키와 값의 쌍으로 구성된 모든 map.entry 객체를 set에 담아서 리턴
+ 			- V get(Object key)						: 주어진 키가 있는 값을 리턴
+ 			- boolean isEmpty()						: 컬렉션이 비어있는지 확인
+ 			- Set<K> keySet()						: 모든 키를 set 객체에 담아서 리턴
+ 			- int size()							: 저장된 키의 총수를 리턴
+ 			- Collection<> values()					: 저장된 모든 값을 Collection에 담아서 리턴
+ 			
+ 		- 객체삭제
+ 			- void clear()							: 모든 Map.Entry(키와 값)을 삭제
+ 			- V remove(Object key)					: 주어진 키와 일치하는 Map.Entry를 삭제하고 값을 리턴
+ 										  
+ 							  
+  16. GUI
+  	- 구조
+  		- 새로운 프레임이나 창으로 객체를 생성하여 프로그램을 시작
+  		- 레이아웃 객체를 사용하여 기본 레이아웃을 정의
+  		- 화면 구성에 필요한 컴포넌트(버튼, 스크롤바, 아이콘, 툴바 등)들을 생성하고 레이아웃에 배치
+  		- 사용자와 상호작용(클릭, 키보드 입력, 마우스 이동 등)을 하는 이벤트 랜들러를 등록 
+  		- 발생한 이벤트를 처리하는 코드를 구현
+  		
+  	- Swing 과 AWT 의 비교
+  		- 텍스트 출력
+  			- AWT	: Label 
+  			- Swing	: JLabel
+  			
+  		- 멀티 라인 텍스트 출력
+  			- AWT	: Multiple Labels 
+  			- Swing	: Multiple JLabels 또는 JLabel 과 HTML content
+  			
+  		- 다중 라인 포멧 텍스트 출력
+  			- AWT	: Multiple Labels와 다양한 폰트
+  			- Swing	: JLabel과 HTML content
+  			
+  		- 단일 라인 텍스트 입력
+  			- AWT	: TextField
+  			- Swing	: JTextField
+  			
+  		- 다중 라인 텍스트 입력
+  			- AWT	: TextArea 
+  			- Swing	: JTextArea
+  			
+  		- 이미지 출력
+  			- AWT	: N/A
+  			- Swing	: JLabel
+  			
+  		- 텍스트와 이미지 출력
+  			- AWT	: N/A
+  			- Swing	: JLabel
+  			
+  		- ToolTip 팝업 도움말
+  			- AWT	: N/A 
+  			- Swing	: setToolTip on component, subclass JToolTip
+  			
+  		- 텍스트 입력 스타일
+  			- AWT	: N/A 
+  			- Swing	: JEditorPane
+  			
+  		- 푸시버튼과 텍스트
+  			- AWT	: Button
+  			- Swing	: JButton	
+  			
+  		- 푸시버튼, 텍스트/이미지
+  			- AWT	: N/A
+  			- Swing	: JButton
+  			
+  		- 그리기 영역
+  			- AWT	: Canvas
+  			- Swing	: JPanel
+  			
+  		- On/Off 체크박스
+  			- AWT	: CheckBox
+  			- Swing	: JCheckBox
+  			
+  		- 라디오 선택
+  			- AWT	: CheckBoxGroup
+  			- Swing	: ButtonGroup과 메뉴	
+  			
+  		- 드랍다운 리스트 선택
+  			- AWT	: Choice
+  			- Swing	: JComboBox
+  			
+  		- 텍스트 입력 또는 드롭다운 리스트
+  			- AWT	: N/A
+  			- Swing	: JComboBox
+  			
+  		- 스크롤 영역
+  			- AWT	: ScrollPane
+  			- Swing	: JScrollPane	
+  			
+  		- 최상위 창
+  			- AWT	: Dialog, Frame, Window
+  			- Swing	: JDialog, JFrame, JWindow	
+  			
+  		- 기본창
+  			- AWT	: Window
+  			- Swing	: JWindow	
+  			
+  		- 프레임창
+  			- AWT	: Frame
+  			- Swing	: JFrame
+  			
+  		- 다이얼로그 창
+  			- AWT	: Dialog
+  			- Swing	: JDialog
+  			
+  		- 메뉴
+  			- AWT	: Menu
+  			- Swing	: JMenu
+  			
+  		- 메뉴 항목
+  			- AWT	: MenuItem
+  			- Swing	: JMenuItem	
+  			
+  		- 메뉴 단축
+  			- AWT	: 키 스토로크
+  			- Swing	: AWT와 동일	
+  			
+  		- 팝업 메뉴
+  			- AWT	: PopupMenu
+  			- Swing	: JPopupMenu
+  			
+  		- 메뉴 바
+  			- AWT	: MenuBar
+  			- Swing	: JMenuBar
+  			
+  		- 삽입 기호 출력
+  			- AWT	: N/A
+  			- Swing	: caret
+  			
+  	- 이벤트 클래스
+  		- ActionEvent		: 컴포넌트에 정의된 해우이가 발생했을때 나타나는 이벤트이다. addActionListener 메서드로 등록하여 ActionListener에 이벤트를 넘긴다
+  		- MouseEvent		: 컴포넌트에 마우스 액션이 발생할때 나타나는 이벤트 이다. addMouseListener 메서드로 등록하며 MouseListener, MouseAdapterListener에 이벤트를 전달한다
+  		- MouseWheelEvent	: 컴포넌트 안에서 마우스 휠을 회전했을때 나타나는 이벤트이다. addMouseWheelListener 메서드로 등록하며 MouseWheelListener에 이벤트를 전달한다 
+  		- KeyEvent			: 컴포넌트 안에서 키 입력으로 나타나는 이벤트이다. addKeyListener 메서드로 등록하며 KeyListener에 이벤트를 전달한다
+  		- ComponentEvent	:
+  		- ContainerEvent	:
+  		- ItemEvent			:
+  		
   						  
   						  
  	
