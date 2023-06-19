@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
@@ -12,9 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.text.BadLocationException;
 
 
-class C05GUI extends JFrame implements ActionListener, KeyListener
+class C06GUI extends JFrame implements ActionListener, KeyListener, MouseListener
 {
 	JButton btn1;
 	JButton btn2;
@@ -23,7 +25,7 @@ class C05GUI extends JFrame implements ActionListener, KeyListener
 	JTextArea area1;
 	JScrollPane scroll1;
 	
-	C05GUI()
+	C06GUI()
 	{
 		// Frame
 		super("세번째 프레임창입니다.");
@@ -61,6 +63,8 @@ class C05GUI extends JFrame implements ActionListener, KeyListener
 		
 		txt1.addKeyListener(this);
 		txt2.addKeyListener(this);
+		
+		area1.addMouseListener(this);
 		
 		// Add_Panel_Component
 		panel.add(btn1);
@@ -127,14 +131,63 @@ class C05GUI extends JFrame implements ActionListener, KeyListener
 //		System.out.println("keyReleased() : " + " " + e.getKeyChar());
 //		System.out.println("keyReleased() : " + " " + e.getKeyCode());
 	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) 
+	{		
+//		System.out.println("mouseClicked()");		
+//		System.out.println(e.getPoint().x + " " + e.getPoint().y);	// 클릭한 위치 좌표
+		int offset = area1.viewToModel(e.getPoint()); // 좌표값을 area에 전달해서 클릭한 위치의 상대적 위치 확인
+//		System.out.println(offset);
+		try {
+			int row = area1.getLineOfOffset(offset); // 현재행의 값을 홗인
+			System.out.println(row); 
+			int startOffset = area1.getLineStartOffset(row); // 행값을 전달하여 해당 행의 시작 위치값 확인
+			int endOffset = area1.getLineEndOffset(row); // 행값을 전달하여 해당 행의 마지막 위치값 확인
+			String txt = area1.getText(startOffset, endOffset-startOffset); // 클릭한 행의 시작문자열과 마지막 번위를 전달하여 문자열을 추출
+			System.out.println(txt);
+			
+		} catch (BadLocationException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent e) 
+	{		
+//		System.out.println("mousePressed()");
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) 
+	{		
+//		System.out.println("mouseReleased()");
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) 
+	{	
+//		System.out.println("mouseEntered()");
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) 
+	{		
+//		System.out.println("mouseExited()");
+	}
 }
 
 
-public class C05SwingMain {
+public class C06SwingMain {
 
 	public static void main(String[] args) {
 		
-		new C05GUI();
+		new C06GUI();
 		
 		
 		
